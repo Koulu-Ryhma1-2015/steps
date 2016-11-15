@@ -18,10 +18,30 @@ font-family: sans-serif;
     text-align: center;
 }
 
+/*    LOGIN   */
+
+#loginform {
+    display: none;
+}
+
 /*    DISCOVER   */
 
 #frontDiscover {
     width:100%;
     display: block;
+    text-align: center;
+}
+
+/*   REGISTER    */
+
+#register {
+    text-align: center;
+}
+
+#confirminfo {
+    text-align: center;
+}
+
+#saveuser {
     text-align: center;
 }

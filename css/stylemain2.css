@@ -38,14 +38,13 @@ li {
 /*     LEFT MENU         */
 
 #leftMenu {
-    width: 0;
+    width: 100%;
     height: 100%;
     position:fixed;
     z-index:2;
     top:0;
-    left:0;
+    left:-100%;
     overflow-x: hidden;
-    transition: 0.5s;
     background-color: #fff;
     padding:0;
 }
@@ -62,14 +61,13 @@ li {
 /*     RIGHT MENUUUUU    */
 
 #rightMenu {
-    width: 0;
+    width: 100%;
     height: 100%;
-    position:fixed;
+    position: fixed;
     z-index:3;
     top:0;
-    right:0;
-    overflow-x: hidden;
-    transition: 0.5s;    
+    right:-100%;
+    overflow-x: hidden;   
     background-color: #fff;
     padding: 0;
 }
