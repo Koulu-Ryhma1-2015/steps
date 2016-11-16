@@ -4,6 +4,16 @@
     <title>ArtnStuff</title>
     <link rel="stylesheet" type="text/css" href="css/stylemain.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+
+        
+    <script>
+    $(document).ready(function() {
+        $("#toggleSearch").click(function(){
+        $("#searchBar").slideToggle(200);
+      });
+    });
+    </script>
     </head>
     
     <script>
@@ -26,63 +36,39 @@
     document.getElementById("leftMenu").style.width = "0";
    // document.getElementById("feed").style.marginLeft = "0";
 }   
-        function toggleSearch() {
-    document.getElementById("searchBar").style.display="block";
-        }
-        
- /*   $(document).on("pagecreate","feed",function(){
-        $("body").on("swipeleft",function(){
-            openNav();
-        });
-    });*/
+   
+   
         </script>
 <body>
 
    <nav id="rightMenu">
-        <div id="profileBox">
-        <div id="profilePicture">
-            <img src="images/avatar.jpg">
-            </div>
-        <div id="profileName">
-            Matti Meikäläinen
-            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        </div>
-       </div>
-        <div id="controls1">
-            <ul>
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <!-- tilapäinen sulkunappi -->
+       <img src="images/avatar.jpg" class="center">
+       <h3 id="menuUsername">Matti Meikäläinen</h3>
+        <ul>
             <li><a href="main.php">Home</a></li>
             <li>New post</li>
-            </ul>
-        </div>
-        <div id="search" onclick="toggleSearch()">
-        <ul><li>Search</li></ul>
-        <form id="searchBar">
-            <input type="text" name="search">
-            </form>    
-        </div>
-        <div id="discover">
-        Tähän ehdotettua sisältöä
-        </div>
-        <div id="controls2">
-            <ul>            
+            <li id="toggleSearch">Search</li>
+            <li id="searchBar">
+                <form>
+                <input type="text" name="search" action="search.php" placeholder="Title, description, user...">
+                </form>
+            </li>
+            <li id="menuDiscover">
+                Tähän ehdotettua sisältöä
+            </li>
             <li>Settings</li>
             <li>Log out</li>
-            </ul>
-        </div>
+        </ul>
     </nav>
     
-       <nav id="leftMenu"><!-- Left menu for profile pages, includes filtering, folders etc. -->
-        <div id="filter"> <!-- Filtering for content type -->
-            Filter by:
-        </div>
-        <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a>
-        <div id="collections"> <!-- User's collections -->
-        Collections:
-        
-        </div>
-        <div id="favourites"> <!-- User's favs -->
-        Faves:
-        </div>
+    <nav id="leftMenu"><!-- Left menu for profile pages, includes filtering, folders etc. -->
+       <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a> <!-- tilapäinen sulkunappi -->
+        <ul>
+            <li>Filter by:</li> <!-- Filtering for content type -->
+            <li>Collections:</li> <!-- User's collections -->
+            <li>Favourites</li> <!-- User's favs -->
+           </ul>
     </nav>
 
     <main id="feed">

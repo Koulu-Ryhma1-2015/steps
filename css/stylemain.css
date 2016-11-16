@@ -1,4 +1,12 @@
-/*     FONTS            */
+                                        /*     USEFUL          */
+
+.center {
+    display: block;
+    margin: 0 auto 0 auto;
+}
+
+
+                                        /*     FONTS            */
 
 
 #bannerText h1 {
@@ -19,23 +27,9 @@
     font-size: 1.3em;
 }
 	
-/*     LISTS             */
 
-ul {
-    list-style-type: none;
-    margin:0;
-    padding: 0;
-}
-li {
-    background-color: #ddd;
-    width:100%;
-    margin: 1% 0 1% 0;
-    padding:1%;
-    font-size: 1.5em;
-    left:0;
-}
 
-/*     LEFT MENU         */
+                                     /*       MENU         */
 
 #leftMenu {
     width: 0;
@@ -50,17 +44,6 @@ li {
     padding:0;
 }
 
-#filter {
-    padding: 2%;
-}
-#collections {
-    padding: 2%;
-}
-#favourites {
-    padding: 2%;
-}
-/*     RIGHT MENUUUUU    */
-
 #rightMenu {
     width: 0;
     height: 100%;
@@ -73,22 +56,33 @@ li {
     background-color: #fff;
     padding: 0;
 }
-
-#profileBox {
-    width: 100%;
-    text-align: center;
-    padding: 2%;
+ 
+#leftMenu ul, #rightMenu ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+#leftMenu li, #rightMenu li {
+    background-color: #ddd;
+    width:100%;
+    margin: 1% 0 1% 0;
+    padding:1%;
+    font-size: 1.5em;
+    left:0;
 }
 
-#profileName {
+                                 /*     RIGHT MENUUUUU    */
+
+
+
+#menuUsername {
     text-align: center;
-    width:100%;
-    font-size: 1.3em;
 }
 
 #searchBar {
-    display:none;
+    display: none;
 }
+
 /*    PROFILE BANNER   */
 
 #banner {
