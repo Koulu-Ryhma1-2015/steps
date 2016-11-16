@@ -10,7 +10,7 @@ SSLon();
     <title>Register new user</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
      <meta name="viewport" content="width=device-width, initial-scale=1">
-        
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
 function validate(){
     var n1 = document.getElementById("pw1");
@@ -40,6 +40,7 @@ function validateEmail(){
 </script>
     </head>
 <?php 
+
 include_once("config/config.php");
 if(isset($_POST["submit"])){
         $data = $_POST["data"];
@@ -72,8 +73,8 @@ if(isset($_POST["submit"])){
             $userinfo = unserialize($_SESSION["userinfo"]); ?>
             <input type="text" name="data[Username]" value="<?php echo $userinfo["Username"]; ?>" required><br/>
             <input type="text" name="data[Email]" id="email" value="<?php echo $userinfo["Email"]; ?>" required><br/>
-            <input type="text" name="data[Upassword]" id="pw1" value="<?php echo $userinfo["Upassword"]; ?>" required>
-            <input type="text" name="Upassword_again" id="pw2" value="<?php echo $userinfo["Upassword"]; ?>" required><br/>
+            <input type="password" name="data[Upassword]" id="pw1" value="<?php echo $userinfo["Upassword"]; ?>" required>
+            <input type="password" name="Upassword_again" id="pw2" value="<?php echo $userinfo["Upassword"]; ?>" required><br/>
         <?php
         } else { ?>
             <input type="text" name="data[Username]" placeholder="Username" required><br/>

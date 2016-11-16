@@ -24,7 +24,7 @@ SSLon();
         $check_email->bindValue(':user_email', $email, PDO::PARAM_STR);
         $check_email->execute();
         $result = $check_email->rowCount();
-        if ($result < 0) {
+        if ($result <= 0) {
             $options = ['cost' => 8,];    //Password hashing options     
             $userdata["Upassword"]=password_hash($userdata["Upassword"],PASSWORD_BCRYPT, $options);
             
