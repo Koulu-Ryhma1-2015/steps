@@ -2,11 +2,10 @@
 <html>
     <head>
     <title>ArtnStuff</title>
-    <link rel="stylesheet" type="text/css" href="css/stylemain2.css">
+    
     <meta name="viewport" content="width=device-width, initial-scale=1">
-<!--    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> -->
-        
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/stylemain2.css">
     <script>
      function openNav() {
     document.getElementById("rightMenu").style.width="100%";
@@ -17,12 +16,7 @@ function closeNav() {
     document.getElementById("rightMenu").style.width = "0";
     document.getElementById("feed").style.marginRight = "0";
 }   
-        
- /*   $(document).on("pagecreate","feed",function(){
-        $("body").on("swipeleft",function(){
-            openNav();
-        });
-    });*/
+
         </script>
     </head>
 <body>

@@ -2,8 +2,9 @@
 <html>
     <head>
     <title>ArtnStuff</title>
-    <link rel="stylesheet" type="text/css" href="css/stylemain.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 
         

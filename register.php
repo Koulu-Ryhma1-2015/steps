@@ -8,8 +8,9 @@ SSLon();
 <html>
     <head>
     <title>Register new user</title>
-    <link rel="stylesheet" type="text/css" href="css/style.css">
      <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
     <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 <script>
 function validate(){
