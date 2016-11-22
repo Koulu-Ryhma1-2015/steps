@@ -20,12 +20,12 @@ SSLon();
         $userdata["Upassword"]=md5($userdata["Upassword"]."!!");
         try {
             $sql = $DBH->prepare("INSERT INTO 
-            Users (Username,Email,Upassword)
+            a_Users (Username,Email,Upassword)
             VALUES
             (:Username,:Email,:Upassword);");    
         if($sql->execute($userdata)){
             try {                
-                $sql = "SELECT * FROM Users WHERE Id = ".$DBH->lastInsertId().";";
+                $sql = "SELECT * FROM a_Users WHERE Id = ".$DBH->lastInsertId().";";
 					$STH3 = $DBH->query($sql);
 					$STH3->setFetchMode(PDO::FETCH_OBJ);
 					$user = $STH3->fetch();

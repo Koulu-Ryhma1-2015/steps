@@ -45,7 +45,7 @@ if(isset($_POST["submit"])){
         $data = $_POST["data"];
         $email = $data["Email"];
        
-        $check_email = $DBH->prepare('SELECT Email FROM Users WHERE Email=:user_email');
+        $check_email = $DBH->prepare('SELECT Email FROM a_Users WHERE Email=:user_email');
         $check_email->bindValue(':user_email', $email, PDO::PARAM_STR);
         $check_email->execute();
         $result = $check_email->rowCount();
