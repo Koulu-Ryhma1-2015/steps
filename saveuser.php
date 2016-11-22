@@ -33,6 +33,8 @@ SSLon();
 					$_SESSION["Username"] = $user->Username;
                     $_SESSION["Email"] = $user->Email;
                     $_SESSION["Joindate"] = $user->Joindate; //!!!!!!!!!
+                    
+                    unset($_SESSION['userinfo']);
                 
             echo ("<p>Username: ".$_SESSION["Username"]."<br/> 
             Email: ".$_SESSION["Email"]."<br/>

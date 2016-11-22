@@ -19,8 +19,8 @@
 Hieno kuva
 </header>
 
-<div id="login">
-<p>Log in</p>
+<div id="loginbox">
+<p id="login">Log in</p>
     <form method="POST" action="login.php" id="loginform">
         <input type="text" name="Email" id="email" placeholder="Email" required><br/>
         <input type="password" name="Upassword" id="pw" placeholder="Password" required><br/>
