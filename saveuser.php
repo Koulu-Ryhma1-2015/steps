@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once('config/config.php');
-require_once('functions/functions.php');
-SSLon();
+include('header.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -16,39 +14,49 @@ SSLon();
     
     <main id="saveuser">
         <?php
+        $options = ['cost' => 8,];        
+        
         $userdata = unserialize($_SESSION['userinfo']);
-        $userdata["Upassword"]=md5($userdata["Upassword"]."!!");
-        try {
-            $sql = $DBH->prepare("INSERT INTO 
-            a_Users (Username,Email,Upassword)
-            VALUES
-            (:Username,:Email,:Upassword);");    
-        if($sql->execute($userdata)){
-            try {                
-                $sql = "SELECT * FROM a_Users WHERE Id = ".$DBH->lastInsertId().";";
-					$STH3 = $DBH->query($sql);
-					$STH3->setFetchMode(PDO::FETCH_OBJ);
-					$user = $STH3->fetch();
-					$_SESSION["loggedin"] = true;
-					$_SESSION["Username"] = $user->Username;
-                    $_SESSION["Email"] = $user->Email;
-                    $_SESSION["Joindate"] = $user->Joindate; //!!!!!!!!!
+        $userdata["UPassword"]=password_hash($userdata["UPassword"], PASSWORD_BCRYPT, $options);
+        if(filter_var($userdata["Email"], FILTER_VALIDATE_EMAIL)){
+            if(preg_match("/^[a-öA-Ö ]*$/",$data['Username'])) {
+            try {
+                $sql = $DBH->prepare("INSERT INTO 
+                a_Users (Username,Email,UPassword)
+                VALUES
+                (:Username,:Email,:UPassword);");    
+            if($sql->execute($userdata)){
+                try {                
+                    $sql = "SELECT * FROM a_Users WHERE Id = ".$DBH->lastInsertId().";";
+					   $STH3 = $DBH->query($sql);
+					   $STH3->setFetchMode(PDO::FETCH_OBJ);
+					   $user = $STH3->fetch();
+					   $_SESSION["loggedin"] = true;
+					   $_SESSION["Username"] = $user->Username;
+                       $_SESSION["Email"] = $user->Email;
+                       $_SESSION["Joindate"] = $user->Joindate; //!!!!!!!!!
                     
-                    unset($_SESSION['userinfo']);
+                       unset($_SESSION['userinfo']);
                 
-            echo ("<p>Username: ".$_SESSION["Username"]."<br/> 
-            Email: ".$_SESSION["Email"]."<br/>
-            Joindate: ".$_SESSION["Joindate"]."</p>"); //TESTITULOSTUS  
+                       echo ("<p>Username: ".$_SESSION["Username"]."<br/> 
+                       Email: ".$_SESSION["Email"]."<br/>
+                       Joindate: ".$_SESSION["Joindate"]."</p>"); //TESTITULOSTUS  
                 
-                    echo ("<p>Your registration is complete. The button below takes you to your profile.</p>");
-                    echo ("<a href='profile.php'><button type='button'>Home feed</button></a>");
+                        echo ("<p>Your registration is complete. The button below takes you to your profile.</p>");
+                        echo ("<a href='profile.php'><button type='button'>Home feed</button></a>");
                     }catch(PDOException $e){
                         echo ("Error fetching information");
                     }
+                }
+            }catch(PDOException $e){
+            echo ("Error inserting information");
             }
-        }catch(PDOException $e){
-        echo ("Error inserting information");
-        } ?>
+        }else {
+            echo("Faulty username.");  
+        }
+        }else {
+            echo("Faulty email address.");
+        };?>
     </main>
 
     </body>

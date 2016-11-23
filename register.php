@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once('config/config.php');
-require_once('functions/functions.php');
-SSLon();
+include('header.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -41,13 +39,13 @@ if(isset($_POST["submit"])){
             $userinfo = unserialize($_SESSION["userinfo"]); ?>
             <input type="text" name="data[Username]" value="<?php echo $userinfo["Username"]; ?>" pattern="^[0-9a-zA-Z]+$" required><br/>
             <input type="text" name="data[Email]" id="email" value="<?php echo $userinfo["Email"]; ?>" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required><br/>
-            <input type="password" name="data[Upassword]" id="pw1" required>
+            <input type="password" name="data[UPassword]" id="pw1" required>
             <input type="password" name="Upassword_again" id="pw2" required><br/>
         <?php
         } else { ?>
             <input type="text" name="data[Username]" placeholder="Username" pattern="^[0-9a-zA-Z]+$" required><br/>
             <input type="text" name="data[Email]" id="email" placeholder="Email" pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" required><br/>
-            <input type="password" name="data[Upassword]" id="pw1" placeholder="Password" required>
+            <input type="password" name="data[UPassword]" id="pw1" placeholder="Password" required>
             <input type="password" name="Upassword_again" id="pw2" placeholder="Password again" required><br/>
        <?php } ?>
     <input type="submit" name="submit" value="Register">
@@ -55,7 +53,7 @@ if(isset($_POST["submit"])){
     <div id="errors"></div>
 </main>
     
-<script src="js/userfunctions.js"></script>
+<script src="js/userfunctions.js"></script> 
     
     
 </body>

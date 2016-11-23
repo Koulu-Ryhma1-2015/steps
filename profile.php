@@ -77,7 +77,7 @@
         </div>
         <a href="javascript:void(0)" class="closebtn" onclick="closeFilter()">&times;</a>
         <div id="collections"> <!-- User's collections -->
-        Collections:
+            Collections:
         
         </div>
         <div id="favourites"> <!-- User's favs -->

@@ -1,8 +1,7 @@
 <?php
 session_start();
-require_once('config/config.php');
-require_once('functions/functions.php');
-SSLon();
+include('header.php');
+include('config/userphp.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -15,9 +14,17 @@ SSLon();
     <body>
     
     <main id="login">
-      
+    <?php 
+    if(isset($_POST['login'])){ //Check if user has entered the page after typing in login information elsewhere, like index.php
+        login($_POST['email'],$_POST['pwd'],$DBH);
+       // print_r($user);
+        
+        
+    }
+    ?>    
+    
     
     </main>
     
     </body>
-    </html>
+</html>

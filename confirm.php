@@ -1,8 +1,6 @@
 <?php
 session_start();
-require_once('config/config.php');
-require_once('functions/functions.php');
-SSLon();
+include('header.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -20,7 +18,7 @@ $userdata = unserialize($_SESSION['userinfo']);
     <?php
         echo "<p>Username:<br/>".$userdata["Username"]."</p>";
         echo "<p>Email:<br/>".$userdata["Email"]."</p>";
-?>
+    ?>
     <p>Check your information</p>
     <a href="saveuser.php"><button>Register account</button></a>
     <a href="register.php"><button>Change information</button></a>
