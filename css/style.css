@@ -1,0 +1,54 @@
+/*    HEADER   */
+
+header {
+    width:100%;
+    display:block;
+    text-align: center;
+}
+
+/*    BODY    */
+
+body {    
+font-family: sans-serif;
+}
+
+#loginbox, #register {
+    width:100%;
+    display: block;
+    text-align: center;
+}
+
+/*    LOGIN   */
+
+#loginform {
+    display: none;
+}
+
+/*    DISCOVER   */
+
+#frontDiscover {
+    width:100%;
+    display: block;
+    text-align: center;
+}
+
+/*   REGISTER    */
+
+#register {
+    text-align: center;
+}
+
+#confirminfo {
+    text-align: center;
+}
+
+#saveuser {
+    text-align: center;
+}
+
+/*   HELPER CLASSES   */
+
+.center {
+    display: block;
+    margin: auto;
+}
