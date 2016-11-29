@@ -12,18 +12,15 @@
 
     // Display profile banner
     if($user->Banner !== null){
-        echo("<img src='images/banner/".$user->Banner."' class='resize'>");
+        echo("<img src='images/uploads/".$user->Banner."' class='resize'>");
     }else {
         echo("<img src='images/banner/default.jpg' class='resize'>");
     }
     
-    echo("
-    <h2>".$user->Username."</h2>");
-    
     
     //Display user's posts
     try{
-        $sql = $DBH->prepare("SELECT * FROM a_Upload WHERE Uploader = ?");
+        $sql = $DBH->prepare("SELECT * FROM a_Upload WHERE Uploader = ? ORDER BY UploadDate");
         $sql->execute([$Id]);
         
         
@@ -34,10 +31,10 @@
 
               
             echo("<article class='feedPost'>
+            <img src='images/uploads/".$row['Url']."' class='resize'>
             <h3>".$row['UploadName']."</h3>
             <h3>".$row['Description']."</h3>
-            <h3>".$row['UploadDate']."</h3>
-            <h3>".$likes." <3</h3>"
+            <h3>".$row['UploadDate']." ".$likes." <3</h3>"
             );
             
             echo("</article>");

@@ -14,8 +14,10 @@ include('header.php');
     
 <?php
 if($_SESSION['loggedin']){
-     redirect('profile.php');
- } ?>
+     redirect('profile.php?Id='.$_SESSION['id']);
+ } 
+    
+?>
     
     
 <header>
@@ -36,9 +38,6 @@ Hieno kuva
 <a href="register.php">Register</a>
 </div>
 
-<div id="frontDiscover">
-Here some fancy pics
-</div>
 
 <script src="js/menu.js"></script>
 </body>

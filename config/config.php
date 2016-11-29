@@ -1,9 +1,9 @@
 <?php
 
-$user = 'niinarie';		//Käytäjänimi 
-$pass = 'laulubase2016';		//Salasana
-$host = 'mysql.metropolia.fi';  //Tietokantapalvelin
-$dbname = 'niinarie';		//Tietokanta
+$user = 'webper';		//Käytäjänimi 
+$pass = 'qwerty';		//Salasana
+$host = 'localhost';  //Tietokantapalvelin
+$dbname = 'webper';		//Tietokanta
 // Muodostetaan yhteys tietokantaan
 try {     //Avataan yhteys tietokantaan ($DBH on nyt luotu yhteysolio, nimi vapaasti valittavissa)
 	$DBH = new PDO("mysql:host=$host;dbname=$dbname", $user, $pass);

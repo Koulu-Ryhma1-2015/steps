@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-  // only small screens
+/*  // only small screens
   if($(window).width() <= 600){
     // show menu on swipe to right
     $(document).on('swiperight', function(e) {
@@ -16,10 +16,16 @@ $(document).ready(function() {
         left: '-100%'
       });
     });
-  }
+  } */
     
 $("#login").click(function(){
         $("#loginform").slideToggle(400);
+    });
+
+
+
+$("#search").click(function(){
+        $("#searchbar").slideToggle(400);
     });
 
 });

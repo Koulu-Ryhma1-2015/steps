@@ -1,6 +1,7 @@
 <?php
 session_start();
 include('header.php');
+include('password/lib/password.php');
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -13,20 +14,35 @@ include('header.php');
     <body>
     
     <main id="saveuser">
-        <?php
-        $options = ['cost' => 8,];        
         
+        <?php
+
+    
+        $options = ['cost' => 8,];     
+      
         $userdata = unserialize($_SESSION['userinfo']);
         $userdata["UPassword"]=password_hash($userdata["UPassword"], PASSWORD_BCRYPT, $options);
+        
+        function array_push_assoc($array, $key, $value){
+            $array[$key] = $value;
+            return $array;
+        }
+        $date = date('Y-m-d');
+        $userdata = array_push_assoc($userdata,'Joindate', $date);
+
         if(filter_var($userdata["Email"], FILTER_VALIDATE_EMAIL)){
-            if(preg_match("/^[a-öA-Ö ]*$/",$data['Username'])) {
+
+            if(preg_match("/^[a-öA-Ö ]*$/",$userdata['Username'])) {
+
             try {
+
                 $sql = $DBH->prepare("INSERT INTO 
-                a_Users (Username,Email,UPassword)
+                a_Users (Username,Email,UPassword, Joindate)
                 VALUES
-                (:Username,:Email,:UPassword);");    
+                (:Username,:Email,:UPassword, :Joindate);");    
             if($sql->execute($userdata)){
-                try {                
+                try {   
+ 
                     $sql = "SELECT * FROM a_Users WHERE Id = ".$DBH->lastInsertId().";";
 					   $STH3 = $DBH->query($sql);
 					   $STH3->setFetchMode(PDO::FETCH_OBJ);
@@ -54,9 +70,9 @@ include('header.php');
         }else {
             echo("Faulty username.");  
         }
-        }else {
+       }else {
             echo("Faulty email address.");
-        };?>
+        };  ?>
     </main>
 
     </body>
