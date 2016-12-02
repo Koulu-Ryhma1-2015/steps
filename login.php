@@ -13,12 +13,12 @@ include('config/userphp.php');
     
     <body>
     
-    <main id="login">
+    <main class="center">
     <?php 
     if(isset($_POST['login'])){ //Check if user has entered the page after typing in login information elsewhere, like index.php
         if(login($_POST['email'],$_POST['pwd'],$DBH)){
             echo("<br> Welcome ".$_SESSION['username']);
-            echo("<br><a href='profile.php?Id=".$_SESSION['id']."'><button>Home page</button></a>");
+            echo("<br><a href='main.php'><button>Home page</button></a>");
         };
         
         

@@ -75,6 +75,29 @@ body {
     font-size: 1.3em;
 }
 
+
+
+/*    LINKS              */
+a {
+    color: #000;
+}
+
+a:link {
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
 /*     LISTS             */
 
 ul {
@@ -82,14 +105,23 @@ ul {
     margin:0;
     padding: 0;
 }
+
+li:hover {
+    background-color: #def;
+}
 li {
     background-color: #ddd;
+    display: block;
     width:100%;
-    margin: 1% 0 1% 0;
+    margin: 0.02% 0 0.02% 0;
     padding:1%;
     font-size: 1.5em;
     left:0;
 }
+article {
+    display: block;
+}
+
 
 /*     LEFT MENU         */
 
@@ -150,6 +182,19 @@ li {
     display:none;
 }
 
+#feed{
+    
+}
+.popup{
+    display: block;
+    width: 100%;
+    height: 70%;
+    z-index: 100;
+    position: fixed;
+    margin: auto;
+    background-color: #ddd;
+    top: 20%;
+}
 /*    HEADER   */
 
 
@@ -215,7 +260,8 @@ li {
 
 .resize {
 	display: block;
-    width:100%; 
+    width:97%; 
+    margin: auto;
 }
 
 
@@ -269,6 +315,7 @@ form {
 .center {
     display: block;
     margin: auto;
+    text-align: center;
 }
 
 /*   MEDIA QUERIES     */
@@ -283,6 +330,13 @@ form {
         flex-flow: center;
         align-items: flex-start;
         align-content: flex-start;
+    }
+    main{
+        max-width: 50em;
+    }
+    .popup {
+        max-width:40em;
+        max-height:40em;
     }
 
 }

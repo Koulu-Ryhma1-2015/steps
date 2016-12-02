@@ -1,6 +1,4 @@
 // Validate email and check if passwords match
-
-
     
 var form = document.querySelector("form");
 
@@ -58,4 +56,5 @@ function validate(e){
 };
 
 form.addEventListener('submit',validate);
+
 

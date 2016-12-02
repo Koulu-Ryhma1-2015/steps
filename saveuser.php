@@ -28,7 +28,9 @@ include('password/lib/password.php');
             return $array;
         }
         $date = date('Y-m-d');
+        $avatar = 'defaultavatar.jpg';
         $userdata = array_push_assoc($userdata,'Joindate', $date);
+        $userdata = array_push_assoc($userdata,'Avatar', $avatar);
 
         if(filter_var($userdata["Email"], FILTER_VALIDATE_EMAIL)){
 
@@ -37,9 +39,9 @@ include('password/lib/password.php');
             try {
 
                 $sql = $DBH->prepare("INSERT INTO 
-                a_Users (Username,Email,UPassword, Joindate)
+                a_Users (Username,Email,UPassword, Joindate,Avatar)
                 VALUES
-                (:Username,:Email,:UPassword, :Joindate);");    
+                (:Username,:Email,:UPassword, :Joindate,:Avatar);");    
             if($sql->execute($userdata)){
                 try {   
  
@@ -48,15 +50,16 @@ include('password/lib/password.php');
 					   $STH3->setFetchMode(PDO::FETCH_OBJ);
 					   $user = $STH3->fetch();
 					   $_SESSION["loggedin"] = true;
-					   $_SESSION["Username"] = $user->Username;
-                       $_SESSION["Email"] = $user->Email;
-                       $_SESSION["Joindate"] = $user->Joindate; //!!!!!!!!!
+					   $_SESSION["username"] = $user->Username;
+                       $_SESSION["email"] = $user->Email;
+                       $_SESSION["joindate"] = $user->Joindate; //!!!!!!!!!
+                        $_SESSION["avatar"] = $user->Avatar;
                     
                        unset($_SESSION['userinfo']);
                 
-                       echo ("<p>Username: ".$_SESSION["Username"]."<br/> 
-                       Email: ".$_SESSION["Email"]."<br/>
-                       Joindate: ".$_SESSION["Joindate"]."</p>"); //TESTITULOSTUS  
+                       echo ("<p>Username: ".$_SESSION["username"]."<br/> 
+                       Email: ".$_SESSION["email"]."<br/>
+                       Joindate: ".$_SESSION["joindate"]."</p>"); //TESTITULOSTUS  
                 
                         echo ("<p>Your registration is complete. The button below takes you to your profile.</p>");
                         echo ("<a href='profile.php'><button type='button'>Home feed</button></a>");

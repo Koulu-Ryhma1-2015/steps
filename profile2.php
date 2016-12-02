@@ -4,8 +4,7 @@
     <title>ArtnStuff</title>
     <link rel="stylesheet" type="text/css" href="css/stylemain2.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script> 
+
         
     <script>
     function toggleSearch() {
@@ -94,7 +93,7 @@
      
     </footer>
 
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="js/menu.js"></script>
 
 

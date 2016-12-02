@@ -31,7 +31,7 @@ switch($imagetype){
         $imagesize = 1000000;
         break;
     default:
-        $imagesize = 1000000;
+        $imagesize = 10000000;
 }
     
 $target_dir = "images/uploads/";

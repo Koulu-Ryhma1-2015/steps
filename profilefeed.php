@@ -16,7 +16,17 @@
     }else {
         echo("<img src='images/banner/default.jpg' class='resize'>");
     }
-    
+
+        $smq=$DBH->prepare("SELECT * FROM a_Follow WHERE Followed=".$Id." and Follower=".$_SESSION['id']."");
+        $smq->execute();
+
+        if($smq->rowCount()===1){
+            echo ('<a href="#" class="follow" id="'.$Id.'" title="Unfollow" onclick="return false"><img src="images/unfollow.png"></a>');
+        }else{ 
+            if($Id!==$_SESSION['id']){
+            echo ('<a href="#" class="follow" id="'.$Id.'" title="Follow" onclick="return false"><img src="images/follow.png"></a>');
+            }
+        }; 
     
     //Display user's posts
     try{
@@ -30,16 +40,15 @@
             $likes = $smt->fetchColumn();
 
               
-            echo("<article class='feedPost'>
-            <img src='images/uploads/".$row['Url']."' class='resize'>
+            echo("<article>
+            <a href='#' class='feedPost' value='".$row['Id']."'
+            onclick='return false'><img src='images/uploads/".$row['Url']."' class='resize' /></a>
             <h3>".$row['UploadName']."</h3>
             <h3>".$row['Description']."</h3>
             <h3>".$row['UploadDate']." ".$likes." <3</h3>"
             );
             
-            echo("</article>");
-
-            
+            echo("</article>");            
         }
            
         
@@ -48,4 +57,4 @@
     }
 
 
-?>
+?>           

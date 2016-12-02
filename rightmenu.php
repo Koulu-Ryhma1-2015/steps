@@ -1,14 +1,10 @@
 <?php
 if($_SESSION['loggedin']){
-    if($_SESSION['avatar']!== null){
-        echo("<img src='images/uploads/".$_SESSION['avatar']."'>");
-    }else {
-        echo("<img src='images/avatar/default.jpg'>");
-    }
+    echo("<a href='profile.php?Id=".$_SESSION['id']."'><img src='images/uploads/".$_SESSION['avatar']."'></a>");
         
     echo("<h2>".$_SESSION['username']."</h2>");
     echo("<ul id='controls1'>
-    <li><a href='main.php'>Home</a></li>
+    <a href='main.php'><li>Home</li></a>
     <a href='upload.php'><li>New post</li></a>
     <li id='search'>
     Search</li>
@@ -17,7 +13,6 @@ if($_SESSION['loggedin']){
     <input type='text' name='search'>
     </form>
     </li>
-    <li id='discover'>Jotain juttua</li>
     <a href='settings.php'><li>Settings</li></a>
     <a href='logout.php'><li>Log out</li></a>");
     
@@ -31,8 +26,9 @@ if($_SESSION['loggedin']){
     <input type='submit' name='login' value='Log in'>
     </form>
     </li>
+    <a href='register.php'><li>Register</li></a>
     </ul>");
-    echo("<br><a href='register.php'>Register</a>");
+
 }
 
 

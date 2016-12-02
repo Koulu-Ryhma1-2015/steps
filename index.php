@@ -19,7 +19,7 @@ if($_SESSION['loggedin']){
     
 ?>
     
-    
+<main class="center">
 <header>
 Hieno kuva
 </header>
@@ -37,7 +37,7 @@ Hieno kuva
 <div id="register">
 <a href="register.php">Register</a>
 </div>
-
+    </main>
 
 <script src="js/menu.js"></script>
 </body>
