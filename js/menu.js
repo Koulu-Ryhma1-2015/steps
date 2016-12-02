@@ -132,7 +132,7 @@ fetch('post.php?id='+$id).then(function(response){
     return response.json();    
 }).then(function(j){ 
     
-    var output='<h3>'+j.UploadName+'</h3><br>'+j.Description;
+    var output='<article><h3>'+j.UploadName+'</h3><br>'+j.Description;
     popup.innerHTML=output;
 // document.querySelector("ul").innerHTML = output;
     

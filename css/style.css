@@ -110,10 +110,9 @@ li:hover {
     background-color: #def;
 }
 li {
-    background-color: #ddd;
+    background-color:#cacaca;
     display: block;
     width:100%;
-    margin: 0.02% 0 0.02% 0;
     padding:1%;
     font-size: 1.5em;
     left:0;
@@ -121,7 +120,23 @@ li {
 article {
     display: block;
 }
+/*     INDEX AND DEFAULT BOXES    */
 
+#index {
+    background-image: url('../images/1280_720.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-size:cover;
+    
+    background-color: #01000e;
+}
+#indexheader {
+    color: #fff;
+}
+
+#loginbox {
+    background-color:#cacaca;
+}
 
 /*     LEFT MENU         */
 
@@ -320,7 +335,14 @@ form {
 
 /*   MEDIA QUERIES     */
 
-@media only screen and (min-width: 35em) {
+@media only screen and (min-width: 45em) {
+    
+    #index {
+        background-image: url('../images/1920.jpg');
+        background-position: left bottom;
+        background-attachment: fixed;
+       
+    }
     body {
         max-width: 50em;
         margin: auto;

@@ -10,7 +10,8 @@ include('header.php');
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
     </head>
-<body>
+    
+<body id="index">
     
 <?php
 if($_SESSION['loggedin']){
@@ -20,23 +21,24 @@ if($_SESSION['loggedin']){
 ?>
     
 <main class="center">
-<header>
-Hieno kuva
+<header id="indexheader">
+<sub>do create &amp; share</sub> create.it
 </header>
     
 
-<div id="loginbox">
-<p id="login">Log in</p>
-    <form method="POST" action="login.php" id="loginform">
+<ul id="loginbox">
+    <li id="login" class="loginbox_li">Log in</li>
+    <li id="loginform">
+    <form method="POST" action="login.php">
         <input type="text" name="email" id="email" placeholder="Email" required><br/>
         <input type="password" name="pwd" id="pwd" placeholder="Password" required><br/>
         <input type="submit" name="login" value="Log in">
     </form>
-</div>
+    </li>
 
-<div id="register">
-<a href="register.php">Register</a>
-</div>
+
+    <li class="loginbox_li"><a href="register.php">Register</a></li>
+</ul>
     </main>
 
 <script src="js/menu.js"></script>
